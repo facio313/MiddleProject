@@ -1,3 +1,5 @@
+<%@page import="common.VolStatus"%>
+<%@page import="common.VolCategory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -98,31 +100,50 @@ img {
 							<div class="form-group">
 								<label for="sel1">카테고리</label>
 								<select class="form-control" id="sel1">
-									<option>1</option>
+									<option>종류를 선택하세요</option>
+<%
+for(VolCategory volCategory : VolCategory.values()){
+%>
+									<option name="volCategory">
+									<%= (volCategory.getKorName()) %>
+									</option>
+<%
+}
+%>
 								</select>
 								<label for="input">제목</label>
-								<input class="form-control" type="text">
+								<input class="form-control" type="text" name="volTitle">
 								<label for="date">시작 날짜</label>
-								<input type="date">
+								<input type="date" name="startDate">
 								<label for="date">종료 날짜</label>
-								<input type="date"><br>
+								<input type="date" name="endDate"><br>
 								<label for="time">시작 시간</label>
-								<input type="time">
+								<input type="time" name="startTime">
 								<label for="time">종료 시간</label>
-								<input type="time"><br>
+								<input type="time" name="endTime"><br>
 								<label for="input">최대 인원</label>
-								<input type="number"><br>
+								<input type="number" name="personnel"><br>
 								<label for="input">현재 인원</label>
-								<input type="number"><br>
-								<label for="input">봉사 장소</label>
-								<input type="number"><br>
+								<input type="number" name="total"><br>
+								<label for="typeLocation">봉사 장소</label>
+								<input type="text" id="typeLocation" name="location"><br>
 								<div id="map" style="height: 400px;"></div>
-								<label for="input">봉사 모집현황</label>
-								<input type="number"><br>
+								<label for="sel2">모집 현황</label>
+								<select class="form-control" id="sel2">
+									<option>상태를 선택하세요</option>
+<%
+for(VolStatus volStatus : VolStatus.values()){
+%>
+									<option name="status">
+									<%= (volStatus.getVolStatus()) %>
+									</option>
+<%
+}
+%>								</select>
 								<label for="input">봉사 대상</label>
-								<input type="text"><br>
+								<input type="text" name="target"><br>
 								<label for="input">자격 요건</label>
-								<input type="text"><br>
+								<input type="text" name="qualification"><br>
 							</div>
 						</form>
 					</div>

@@ -1,12 +1,18 @@
 package volunteer;
 
+import common.VolCategory;
+
 public class Test {
 	public static void main(String[] args) {
 		int star = 2;
-		String contentment = "¡Ù¡Ù¡Ù¡Ù¡Ù";
+		String contentment = "â˜†â˜†â˜†â˜†â˜†";
 		for (int k = 0; k < star; k++) {
-			contentment = contentment.replaceFirst("¡Ù", "¡Ú");
+			contentment = contentment.replaceFirst("â˜†", "â˜…");
 		}
 		System.out.println(contentment);
+		
+		for(VolCategory volCategory : VolCategory.values()) {
+			System.out.println(volCategory);
+		}
 	}
 }

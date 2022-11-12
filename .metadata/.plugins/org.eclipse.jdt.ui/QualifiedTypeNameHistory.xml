@@ -19,7 +19,8 @@
 <fullyQualifiedTypeName name="volunteer.service.VolService"/>
 <fullyQualifiedTypeName name="volunteer.service.IVolService"/>
 <fullyQualifiedTypeName name="volunteer.vo.ReviewVO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="common.VolCategory"/>
 <fullyQualifiedTypeName name="common.VolStatus"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="common.VolCategory"/>
 </qualifiedTypeNameHistroy>

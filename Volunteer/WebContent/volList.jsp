@@ -130,9 +130,9 @@ div {
 						[봉사 장소]   <%=(volList.get(i).getLocation())%> <br>
 						[모집 상태]   <%=(volList.get(i).getStatus().getVolStatus())%> <br>
 						[봉사 대상]   <%=(volList.get(i).getTarget())%> <br>
-						[자격 요건]   <%=(volList.get(i).getQualification())%>
-						<i class="bi-heart" style="font-size:3rem; color: red; cursor: pointer;"></i>
+						[자격 요건]   <%=(volList.get(i).getQualification())%><br>
 						</a>
+						<i class="bi-heart" style="font-size:3rem; color: red; cursor: pointer;"></i>
 					</div>
 				</div>
 			</div>
