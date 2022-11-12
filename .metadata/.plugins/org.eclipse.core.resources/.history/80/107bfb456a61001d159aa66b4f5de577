@@ -1,0 +1,39 @@
+package review.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import list.service.IShowListService;
+import list.service.ShowListService;
+import list.vo.ListVO;
+import review.service.IShowReviewService;
+import review.service.ShowReviewService;
+
+@WebServlet("/ShowReviewController")
+public class ShowReviewController extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		IShowReviewService service = ShowReviewService.getInstance();
+		IShowListService service = ShowListService.getInstance();
+		List<ListVO> list = service.showList();
+		
+		request.setAttribute("list", list);
+
+		RequestDispatcher disp = request.getRequestDispatcher("/list.jsp");
+		disp.forward(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

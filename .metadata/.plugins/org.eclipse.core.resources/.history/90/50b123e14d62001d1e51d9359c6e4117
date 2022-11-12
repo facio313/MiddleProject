@@ -1,0 +1,14 @@
+package common;
+
+public enum VolStatus {
+	PLANNED(1,"모집예정"),
+	RECRUITING(1,"모집 중"),
+	FINISHED(2,"모집 완료");
+	
+	VolStatus(int num, String status){
+		this.num = num;
+		this.status = status;
+	}
+	int num = 0;
+	String status = "";
+}

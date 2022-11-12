@@ -1,0 +1,32 @@
+package list.service;
+
+import java.util.List;
+
+import list.dao.IShowReviewDao;
+import list.dao.ShowReviewDao;
+import list.vo.ListVO;
+import review.vo.ReviewVO;
+
+public class ShowReviewService implements IShowReviewService{
+
+	private IShowReviewDao dao;
+	private static IShowReviewService service;
+	private ShowReviewService() {
+		dao = ShowReviewDao.getInstance();
+	}
+	public static IShowReviewService getInstance() {
+		if (service == null) {
+			service = new ShowReviewService();
+		}
+		return service;
+	}
+	
+	@Override
+	public List<ReviewVO> showReviewList() {
+		
+		List<ReviewVO> reviewList = dao.showReviewList();
+		
+		return reviewList;
+	}
+
+}

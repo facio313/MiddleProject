@@ -1,0 +1,5 @@
+package list.service;
+
+public interface IListService {
+
+}

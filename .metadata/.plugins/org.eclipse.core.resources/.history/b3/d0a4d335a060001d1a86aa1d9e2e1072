@@ -1,0 +1,22 @@
+package list.service;
+
+import java.util.List;
+
+import list.dao.ShowListDao;
+import list.vo.ListVO;
+
+public class ShowListService implements IShowListService {
+
+	private IShowListDao dao;
+	
+	private static IShowListService service;
+	
+	@Override
+	public List<ListVO> showList() {
+		
+		List<ListVO> volList;
+		
+		return null;
+	}
+
+}

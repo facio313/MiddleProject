@@ -1,0 +1,14 @@
+package volunteer;
+
+public class Test {
+	public static void main(String[] args) {
+		int star = 0;
+		String contentment = "』』』』』";
+		for (int j = 0; j < 5; j++) {
+			for (int k = 0; k < star; k++) {
+				contentment.replaceFirst("』", "【");
+			}
+		}
+		System.out.println(contentment);
+	}
+}

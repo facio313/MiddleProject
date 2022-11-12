@@ -1,0 +1,31 @@
+package list.dao;
+
+import java.util.List;
+
+import list.vo.ListVO;
+
+public class ShowListDao extends MyBatisDao implements IShowListDao{
+	
+	private static IShowListDao dao;
+	
+	private ShowListDao() {
+		
+	}
+	
+	public static IShowListDao getInstance() {
+		if (dao == null) {
+			dao = new ShowListDao();
+		}
+		return dao;
+	}
+	
+	
+	
+	
+	@Override
+	public List<ListVO> showList() {
+		
+		return showList("list.showList", null);
+	}
+
+}

@@ -1,0 +1,11 @@
+package list.dao;
+
+import java.util.List;
+
+import review.vo.ReviewVO;
+
+public interface IShowReviewDao {
+
+	public List<ReviewVO> showReviewList();
+
+}

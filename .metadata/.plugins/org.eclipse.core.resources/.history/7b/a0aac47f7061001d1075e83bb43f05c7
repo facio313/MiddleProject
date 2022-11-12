@@ -1,0 +1,39 @@
+package list;
+
+import java.util.List;
+
+import list.service.IShowListService;
+import list.service.ShowListService;
+import list.vo.ListVO;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		IShowListService service = ShowListService.getInstance();
+		List<ListVO> list = service.showList();
+
+		int listSize = list.size();
+		if (listSize > 0) {
+			for (int i = 0; i < listSize; i++) {
+			System.out.println(list.get(i).getVolId());
+			System.out.println(list.get(i).getVolTitle());
+			System.out.println(list.get(i).getMemId());
+			System.out.println(list.get(i).getStartDate());
+			System.out.println(list.get(i).getEndDate());
+			System.out.println(list.get(i).getStartTime());
+			System.out.println(list.get(i).getEndTime());
+			System.out.println(list.get(i).getPersonnel());
+			System.out.println(list.get(i).getTotal());
+			System.out.println(list.get(i).getVolCtId());
+			System.out.println(list.get(i).getLocation());
+			System.out.println(list.get(i).getStatus());
+			System.out.println(list.get(i).getTarget());
+			System.out.println(list.get(i).getQualification());
+			System.out.println(list.get(i).getDetail());
+			System.out.println(list.get(i).getThumbnail());
+			}
+		} else {
+			
+		}
+	}
+}

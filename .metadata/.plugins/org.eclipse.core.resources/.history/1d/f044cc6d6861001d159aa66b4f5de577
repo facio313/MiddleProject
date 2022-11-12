@@ -1,0 +1,15 @@
+package review.vo;
+
+public class ReviewVO {
+
+	private String reservId;
+	private String star;
+	private String content;
+	private String correctionDate;
+	private String deleted;
+	
+	
+	
+	
+	
+}

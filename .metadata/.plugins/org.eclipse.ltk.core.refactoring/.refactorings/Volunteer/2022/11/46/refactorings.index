@@ -1,0 +1,58 @@
+1668040696511	Delete element
+1668041861783	Rename type 'ShowList'
+1668041873349	Rename type 'IListDao'
+1668041879540	Rename type 'IListService'
+1668041927198	Delete element
+1668042352498	Rename type 'ShowListDao'
+1668042625762	Delete element
+1668043953546	Delete element
+1668044874947	Delete element
+1668057780645	Rename type 'ListMain'
+1668063066473	Move 'list.jsp' to 'WEB-INF'
+1668063327112	Delete element
+1668063346900	Delete element
+1668064239153	Delete element
+1668064242891	Move 'list2.jsp' to 'WebContent'
+1668065054873	Delete element
+1668065057633	Move 'list.jsp' to 'WebContent'
+1668066676497	Delete element
+1668133727053	Rename type 'IShowReview'
+1668133730458	Rename type 'ShowReview'
+1668134985240	Copy file
+1668135372081	Delete element
+1668137035795	Move compilation unit
+1668137040213	Move compilation units
+1668137053315	Move compilation units
+1668137060067	Move compilation unit
+1668137064191	Delete element
+1668137081415	Delete element
+1668137132641	Rename package 'list'
+1668137150898	Delete element
+1668137158302	Delete element
+1668137164872	Rename package 'list'
+1668137169770	Delete element
+1668137218218	Move compilation unit
+1668137223612	Move compilation unit
+1668137246086	Move compilation units
+1668137250774	Move compilation units
+1668137453259	Move compilation units
+1668137562507	Delete element
+1668137566523	Delete element
+1668137570402	Delete element
+1668141405871	Delete element
+1668141412183	Delete element
+1668141414539	Delete element
+1668141423546	Delete element
+1668141430061	Delete element
+1668141440104	Delete element
+1668141445473	Delete element
+1668141449141	Delete element
+1668141451635	Delete element
+1668141454710	Delete element
+1668143316402	Rename compilation unit 'ShowListController.java'
+1668143322767	Rename type 'ShowDetailController'
+1668219008280	Delete element
+1668227885484	Delete element
+1668230692545	Delete element
+1668231670613	Delete element
+1668231673684	Delete element

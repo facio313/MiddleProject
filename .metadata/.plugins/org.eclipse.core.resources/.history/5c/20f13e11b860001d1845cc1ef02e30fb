@@ -1,0 +1,29 @@
+package list;
+
+public class Test {
+	public static void main(String[] args) {
+		int listSize = list.size();
+		if (listSize > 0) {
+			for (int i = 0; i < listSize; i++) {
+			list.get(i).getVolId();
+			list.get(i).getVolTitle();
+			list.get(i).getMemId();
+			list.get(i).getStartDate();
+			list.get(i).getEndDate();
+			list.get(i).getStartTime();
+			list.get(i).getEndTime();
+			list.get(i).getPersonnel();
+			list.get(i).getTotal();
+			list.get(i).getVolCtId();
+			list.get(i).getLocation();
+			list.get(i).getStatus();
+			list.get(i).getTarget();
+			list.get(i).getQualification();
+			list.get(i).getDetail();
+			list.get(i).getThumbnail();
+			}
+		} else {
+			
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package list.dao;
+
+import java.util.List;
+
+import volunteer.vo.ListVO;
+
+public interface IShowListDao {
+	
+	public List<ListVO> showList();
+	
+}

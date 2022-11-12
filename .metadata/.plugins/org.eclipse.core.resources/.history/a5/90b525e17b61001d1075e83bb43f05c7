@@ -1,0 +1,33 @@
+package volunteer.dao;
+
+import java.util.List;
+
+import common.QueryDao;
+import volunteer.vo.ListVO;
+import volunteer.vo.ReviewVO;
+
+public class VolDao extends QueryDao implements IVolDao{
+	
+	private static IVolDao dao;
+	private VolDao() {
+	}
+	public static IVolDao getInstance() {
+		if (dao == null) {
+			dao = new VolDao();
+		}
+		return dao;
+	}
+	
+	@Override
+	public List<VolunteerVO> showList() {
+		
+		return selectList("volunteer.showList", null);
+	}
+	
+	@Override
+	public List<ReviewVO> showReviewList() {
+		
+		return selectList("volunteer.showReviewList", null);
+	}
+
+}
