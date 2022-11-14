@@ -1,3 +1,5 @@
+<%@page import="common.VolStatus"%>
+<%@page import="common.VolCategory"%>
 <%@page import="java.util.List"%>
 <%@page import="volunteer.vo.VolunteerVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -120,7 +122,7 @@ div {
 			<div class="volList-group">
 				<div class="media">	
 					<div class="media-left">
-						<img src="http://192.168.35.51:9999/<%=(volList.get(i).getThumbnail())%>"  class="media-object" style="width:100%"/>
+						<img src="http://localhost:9999/<%=(volList.get(i).getThumbnail())%>"  class="media-object" style="width:100%"/>
 					</div>
 					<div class="media-body">
 				        <a href="volDetail.do?volId=<%= (volList.get(i).getVolId()) %>" class="volList-group-item media-heading"><h1>[<%=(volList.get(i).getVolCtId().getKorName())%>]<%=(volList.get(i).getVolTitle())%></h1>
@@ -128,7 +130,7 @@ div {
 						[모집 시간]   <%=(volList.get(i).getStartTime())%> ~ <%=(volList.get(i).getEndTime())%> <br>
 						[신청 인원]   <%=(volList.get(i).getTotal())%> / <%=(volList.get(i).getPersonnel())%> <br> 
 						[봉사 장소]   <%=(volList.get(i).getLocation())%> <br>
-						[모집 상태]   <%=(volList.get(i).getStatus().getVolStatus())%> <br>
+						[모집 상태]   <%=(volList.get(i).getStatus().getKorName())%> <br>
 						[봉사 대상]   <%=(volList.get(i).getTarget())%> <br>
 						[자격 요건]   <%=(volList.get(i).getQualification())%><br>
 						</a>

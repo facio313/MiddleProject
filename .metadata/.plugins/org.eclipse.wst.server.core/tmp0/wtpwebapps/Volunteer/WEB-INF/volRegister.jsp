@@ -13,6 +13,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLuXrEPIX_kNeetaUw8_vyzsILuNypCfw&callback=initMap"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/translations/ko.js"></script>
+
 
 <style>
 body {
@@ -76,6 +79,21 @@ img {
 	height: 100%;
 	z-index: 99;
 }
+input {
+ color: black;
+}
+	.ck.ck-editor {
+    	max-width: 1000px;
+    	z-index:9;
+    	color: black;
+    	
+	}
+	.ck-editor__editable {
+	    min-height: 300px;
+	    z-index:9;
+	    color: black;
+	    
+	}
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
@@ -92,19 +110,21 @@ img {
 					<li><a href="#section2">글 및 첨부파일</a></li>
 				</ul>
 			</nav>
+		<form action="volRegister.do" method="post" enctype="multipart/form-data">
 			<div class="col-sm-9" style='border: 2px solid black; padding: 10px;'>
 				<div class="col-sm-12" id="section1">
-					<div id="detailLeft">썸네일</div>
+					<div id="detailLeft">썸네일 
+						<input type="file" name="thumbnail">
+					</div>
 					<div id="detailRight">
-						<form>
 							<div class="form-group">
 								<label for="sel1">카테고리</label>
-								<select class="form-control" id="sel1">
+								<select class="form-control" id="sel1" name="category">
 									<option>종류를 선택하세요</option>
 <%
 for(VolCategory volCategory : VolCategory.values()){
 %>
-									<option name="volCategory">
+									<option>
 									<%= (volCategory.getKorName()) %>
 									</option>
 <%
@@ -129,13 +149,13 @@ for(VolCategory volCategory : VolCategory.values()){
 								<input type="text" id="typeLocation" name="location"><br>
 								<div id="map" style="height: 400px;"></div>
 								<label for="sel2">모집 현황</label>
-								<select class="form-control" id="sel2">
+								<select class="form-control" id="sel2" name="status">
 									<option>상태를 선택하세요</option>
 <%
 for(VolStatus volStatus : VolStatus.values()){
 %>
-									<option name="status">
-									<%= (volStatus.getVolStatus()) %>
+									<option>
+									<%= (volStatus.getKorName()) %>
 									</option>
 <%
 }
@@ -145,17 +165,32 @@ for(VolStatus volStatus : VolStatus.values()){
 								<label for="input">자격 요건</label>
 								<input type="text" name="qualification"><br>
 							</div>
-						</form>
 					</div>
 				</div>
 
 				<hr>
 
-				<div class="col-sm-12" id="section2">
+				<div class="col-sm-12" id="section2" style="height: 100vh;">
 					<h1>상세내용</h1>
-					<div>여기다가 api 넣기</div>
+					<div>
+						<textarea name="text" id="editor"></textarea>
+					    <script>
+					        ClassicEditor.create( document.querySelector( '#editor' ), 
+					        		{language: "ko"}, 
+					        		{ckfinder: {uploadUrl: 'http://localhost:9999/WEB-INF/volRegister.jsp'}});
+					    </script>
+					</div>
+				</div>
+				
+				<div>
+								
+				<input type="submit" value="등록">
+				<script>
+				console.log($(volTitle));
+				</script>
 				</div>
 			</div>
+		</form>
 		</div>
 	</div>
 

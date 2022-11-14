@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	
+<!-- 	<resultMap type="NoticeVO" id="noticeMap"> -->
+<!-- 	<id column="notice_id" property="noticeId"/> -->
+<!-- 	<result column="mem_id" property="memId"/> -->
+<!-- 	<result column="notice_content" property="noticeContent"/> -->
+<!-- 	<result column="atch_id" property="atchId"/> -->
+<!-- 	<result column="notice_date" property="noticeDate"/> -->
+	
+<!-- 	</resultMap> -->
+
+<!-- 	<select id="selectAllMember"  parameterType="map" resultMap="noticeMap"> -->
+
+
+
+	<select id="selectAllMember"  parameterType="map" resultType="NoticeVO">
+	
+		SELECT A.* 
+		 FROM(
+		      SELECT ROWNUM AS RNUM,
+		      B.* 
+		      FROM (
+		               SELECT * FROM NOTICE
+		               ORDER BY NOTICE_ID DESC) B
+<![CDATA[		               
+		      WHERE ROWNUM <= #{end}) A
+		 WHERE A.RNUM >= #{start}
+]]>		
+	</select>
+	
+	
+	
+	
+	<delete id="DeleteNotice" parameterType="String"> <!-- public int DeleteNotice(String noticeId) doa의 파라미터 타입 String 적기. select만 result값 가짐 -->
+	
+		DELETE FROM NOTICE WHERE NOTICE_ID = #{noticeId}
+	
+	</delete>
+	
+	
+	<insert id="insertNotice" parameterType="vo.NoticeVO">
+	
+		insert into notice
+		values (#{noticeId}, #{memId}, #{noticeTitle}, #{noticeContent}, #{atchId}, sysdate)
+	
+	</insert>
+	
+	
+	
+
+</mapper>
+

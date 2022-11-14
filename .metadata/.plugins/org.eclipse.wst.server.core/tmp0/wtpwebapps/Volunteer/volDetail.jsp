@@ -1,3 +1,5 @@
+<%@page import="common.VolStatus"%>
+<%@page import="common.VolCategory"%>
 <%@page import="java.util.List"%>
 <%@page import="volunteer.vo.VolunteerVO"%>
 <%@page import="volunteer.vo.ReviewVO"%>
@@ -103,7 +105,7 @@ img {
     <div class="col-sm-9" style='border: 2px solid black; padding: 10px; height:auto;'>
       <div id="section1">
 	    <div id="detailLeft">
-	      <img src="http://192.168.35.51:9999/<%=(vv.getThumbnail())%>" />
+	      <img src="http://localhost:9999/<%=(vv.getThumbnail())%>" />
 	    </div>
 	  	<div id="detailRight">
 	        [<%=(vv.getVolCtId().getKorName())%>]
@@ -112,7 +114,7 @@ img {
 			[모집 시간]   <%=(vv.getStartTime())%> ~ <%=(vv.getEndTime())%> <br>
 			[신청 인원]   <%=(vv.getTotal())%> / <%=(vv.getPersonnel())%> <br> 
 			[봉사 장소]   <%=(vv.getLocation())%> <br>
-			[모집 상태]   <%=(vv.getStatus().getVolStatus())%> <br>
+			[모집 상태]   <%=(vv.getStatus().getKorName())%> <br>
 			[봉사 대상]   <%=(vv.getTarget())%> <br>
 			[자격 요건]   <%=(vv.getQualification())%>
       	</div> 

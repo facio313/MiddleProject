@@ -21,6 +21,20 @@ public class VolunteerVO {
 	private String qualification;
 	private String detail;
 	private String thumbnail;
+	
+	private String defaultImage = "images/default/default.jpg";
+
+	public String getDefaultImage() {
+		return defaultImage;
+	}
+
+	public void setDefaultImage(String defaultImage) {
+		this.defaultImage = defaultImage;
+	}
+
+	public VolunteerVO() {
+		setThumbnail(defaultImage);
+	}
 
 	public String getVolId() {
 		return volId;
@@ -94,14 +108,27 @@ public class VolunteerVO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
+////////////////////////////////////////////////////////////////////
+//	public String getVolCtId() {
+//		return volCtId;
+//	}
 
+//	public void setVolCtId(String volCtId) {
+//		this.volCtId = volCtId;
+//	}
+	
 	public VolCategory getVolCtId() {
 		return volCtId;
 	}
-
+	
+	public void setVolCtId(VolCategory volCtId) {
+		this.volCtId = volCtId;
+	}
+	
 	public void setVolCtId(String volCtId) {
 		this.volCtId = VolCategory.valueOf(volCtId);
 	}
+////////////////////////////////////////////////////////////////////
 	
 
 	public String getLocation() {
@@ -111,14 +138,28 @@ public class VolunteerVO {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+////////////////////////////////////////////////////////////////////
 
+//	public String getStatus() {
+//		return status;
+//	}
+//
+//	public void setStatus(String status) {
+//		this.status = status;
+//	}
+	
 	public VolStatus getStatus() {
 		return status;
 	}
-
+	
+	public void setStatus(VolStatus status) {
+		this.status = status;
+	}
+	
 	public void setStatus(String status) {
 		this.status = VolStatus.valueOf(status);
 	}
+////////////////////////////////////////////////////////////////////
 
 	public String getTarget() {
 		return target;

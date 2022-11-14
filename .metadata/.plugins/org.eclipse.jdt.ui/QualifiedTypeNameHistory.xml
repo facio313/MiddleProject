@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="common.QueryDao"/>
 <fullyQualifiedTypeName name="list.dao.ShowListDao"/>
 <fullyQualifiedTypeName name="list.dao.IShowListDao"/>
 <fullyQualifiedTypeName name="list.service.ShowListService"/>
@@ -23,4 +22,19 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="common.VolCategory"/>
+<fullyQualifiedTypeName name="common.thumbnail.vo.ThumbnailVO"/>
+<fullyQualifiedTypeName name="utils.BatisUtil"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Part"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+<fullyQualifiedTypeName name="common.QueryDao"/>
+<fullyQualifiedTypeName name="volunteer.vo.VolunteerVO"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="common.FileService"/>
+<fullyQualifiedTypeName name="common.IFileService"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
 </qualifiedTypeNameHistroy>
