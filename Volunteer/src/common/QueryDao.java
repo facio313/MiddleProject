@@ -39,7 +39,7 @@ public class QueryDao {
 		}
 		return list;
 	}
-
+	
 	public int insert(String statement, Object parameter) {
 		SqlSession sqlSession = BatisUtil.getSqlSession();
 

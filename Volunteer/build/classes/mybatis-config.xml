@@ -15,6 +15,7 @@
 	<typeAliases>
 		<typeAlias type="volunteer.vo.VolunteerVO" alias="VolunteerVO"/>
 		<typeAlias type="volunteer.vo.ReviewVO" alias="ReviewVO"/>
+		<typeAlias type="volunteer.vo.ReservationVO" alias="ReservationVO"/>
 	</typeAliases>
 	
 	<environments default="dev">

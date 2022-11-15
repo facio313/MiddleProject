@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
 public class FileService implements IFileService{
-	private String path = "D:\\A_TeachingMaterial\\04_MiddelProject\\workspace\\Volunteer\\WebContent";
+	private String path = "D:\\A_TeachingMaterial\\04_MiddelProject\\workspace\\Volunteer\\WebContent\\";
 	//private String path = "";
 	private static final String SAVE_DIR = "images/thumbnail";
 		

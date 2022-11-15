@@ -15,8 +15,6 @@
 <fullyQualifiedTypeName name="review.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="volunteer.dao.IVolDao"/>
 <fullyQualifiedTypeName name="volunteer.dao.VolDao"/>
-<fullyQualifiedTypeName name="volunteer.service.VolService"/>
-<fullyQualifiedTypeName name="volunteer.service.IVolService"/>
 <fullyQualifiedTypeName name="volunteer.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="common.VolStatus"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -32,9 +30,12 @@
 <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
 <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
 <fullyQualifiedTypeName name="common.QueryDao"/>
-<fullyQualifiedTypeName name="volunteer.vo.VolunteerVO"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="common.FileService"/>
 <fullyQualifiedTypeName name="common.IFileService"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
+<fullyQualifiedTypeName name="volunteer.vo.VolunteerVO"/>
+<fullyQualifiedTypeName name="volunteer.vo.ReservationVO"/>
+<fullyQualifiedTypeName name="volunteer.service.VolService"/>
+<fullyQualifiedTypeName name="volunteer.service.IVolService"/>
 </qualifiedTypeNameHistroy>

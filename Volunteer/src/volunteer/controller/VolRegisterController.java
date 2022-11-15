@@ -51,11 +51,11 @@ public class VolRegisterController extends HttpServlet {
 		String status = request.getParameter("status");
 		String target = request.getParameter("target");
 		String qualification = request.getParameter("qualification");
-		String detail = request.getParameter("text");
+		String detail = request.getParameter("detail");
 //		String thumbnail = request.getParameter("thumbnail");
 		
 		// 서비스 객체 생성하기
-		IVolService volService = VolService.getInstance();
+		IVolService service = VolService.getInstance();
 		IFileService fileService = new FileService();
 		
 		fileService.saveImage(request, vv.getThumbnail());
@@ -77,7 +77,7 @@ public class VolRegisterController extends HttpServlet {
 		vv.setDetail(detail);
 		vv.setThumbnail(fileService.getSavePath());
 		
-		int cnt = volService.registerVol(vv);
+		int cnt = service.registerVol(vv);
 		
 		String msg = "";
 		if (cnt > 0) {

@@ -13,28 +13,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLuXrEPIX_kNeetaUw8_vyzsILuNypCfw&callback=initMap"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/translations/ko.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
 
 
 <style>
 body {
-	position: relative;
 }
 
 ul.nav-pills {
 	top: 20px;
-	position: fixed;
+/* 	position: fixed; */
+	left:0;
+	z-index:3;
 }
 
 div.col-sm-9 div {
-	position: relative;
+/* 	position: relative; */
 	font-size: 20px;
+	border:1px solid red
 }
 
 #section1 {
 	display: inline-block;
-	position: relative; 
+/* 	position: relative;  */
 	color : #fff;
 	background-color: #1E88E5;
 	border: 5px dotted pink;
@@ -43,11 +46,10 @@ div.col-sm-9 div {
 
 #section2 {
 	display: block; 
-	position : relative;
+/* 	position : static; */
 	color: #fff;
 	background-color: #673ab7;
 	border: 5px solid red;
-	position: relative;
 }
 
 @media screen and (max-width: 810px) {
@@ -57,15 +59,13 @@ div.col-sm-9 div {
 }
 
 #detailLeft {
-	position: relative;
-	z-index: 1;
+/* 	position: relative; */
 	float: left;
 	width: 35%
 }
 
 #detailRight {
-	position: relative;
-	z-index: 1;
+/* 	position: relative; */
 	float: left;
 	width: 65%
 }
@@ -75,25 +75,15 @@ img {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 100px;
+	height: 100px;
 	z-index: 99;
 }
 input {
- color: black;
+	color: black;
 }
-	.ck.ck-editor {
-    	max-width: 1000px;
-    	z-index:9;
-    	color: black;
-    	
-	}
-	.ck-editor__editable {
-	    min-height: 300px;
-	    z-index:9;
-	    color: black;
-	    
-	}
+#summernote {
+}
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
@@ -172,22 +162,13 @@ for(VolStatus volStatus : VolStatus.values()){
 
 				<div class="col-sm-12" id="section2" style="height: 100vh;">
 					<h1>상세내용</h1>
-					<div>
-						<textarea name="text" id="editor"></textarea>
-					    <script>
-					        ClassicEditor.create( document.querySelector( '#editor' ), 
-					        		{language: "ko"}, 
-					        		{ckfinder: {uploadUrl: 'http://localhost:9999/WEB-INF/volRegister.jsp'}});
-					    </script>
-					</div>
+					<textarea id="summernote" name="detail"></textarea>
 				</div>
-				
+
+                     
+					
 				<div>
-								
 				<input type="submit" value="등록">
-				<script>
-				console.log($(volTitle));
-				</script>
 				</div>
 			</div>
 		</form>
@@ -196,6 +177,10 @@ for(VolStatus volStatus : VolStatus.values()){
 
 </body>
 <script>
+	$(document).ready(function() {
+		   $('#summernote').summernote();
+		});
+	
 	window.initMap = function() {
 		const map = new google.maps.Map(document.getElementById("map"), {
 			center : {
@@ -205,5 +190,6 @@ for(VolStatus volStatus : VolStatus.values()){
 			zoom : 10
 		});
 	};
+	
 </script>
 </html>

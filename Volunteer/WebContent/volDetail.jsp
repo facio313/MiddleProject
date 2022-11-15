@@ -31,7 +31,7 @@ ul.nav-pills {
 }
 
 div.col-sm-9 div {
-	height: 410px;
+	height: 400px;
 	font-size: 20px;
 }
 
@@ -48,7 +48,7 @@ div.col-sm-9 div {
 }
 
 #section3 {
-	color: #fff;
+	color: #444;
 	background-color: #ff9800;
 	border: 5px dotted pink;
 }
@@ -110,6 +110,7 @@ img {
 	  	<div id="detailRight">
 	        [<%=(vv.getVolCtId().getKorName())%>]
 	        <h1><%=(vv.getVolTitle())%></h1>
+	        
 			[모집 기간]   <%=(vv.getStartDate())%> ~ <%=(vv.getEndDate())%> <br>
 			[모집 시간]   <%=(vv.getStartTime())%> ~ <%=(vv.getEndTime())%> <br>
 			[신청 인원]   <%=(vv.getTotal())%> / <%=(vv.getPersonnel())%> <br> 
@@ -117,12 +118,26 @@ img {
 			[모집 상태]   <%=(vv.getStatus().getKorName())%> <br>
 			[봉사 대상]   <%=(vv.getTarget())%> <br>
 			[자격 요건]   <%=(vv.getQualification())%>
+<%
+// 일반 : 예약 / 기관 : 삭제, 수정 / 관리자 : 삭제 수정
+// 기관일 시, 작성자와 같냐
+
+// if () {
+	
+// } else if () {
+	
+// } else {
+	
+// }
+%>
+			<a href="volReservation.do?volId=<%= (vv.getVolId()) %>"><button>예약</button></a>
+			<a href="volDelete.do?volId=<%= (vv.getVolId()) %>"><button>삭제</button></a>
       	</div> 
       </div>
       
       <hr>
       
-      <div id="section2"> 
+      <div id="section2" style="border: 2px groove yellow; padding: 10px; height:auto;"> 
         <h1>상세내용</h1>
 		<%=(vv.getDetail())%>
         
@@ -131,6 +146,11 @@ img {
       <hr>
       <div id="section3">         
         <h1>후기</h1>
+	        <button style="color: black;" onclick="">후기 작성하기</button>
+        <form action="volReviewRegister.do" method="post">
+			<input class="form-control" type="text" name="review">
+			<input type="submit" value="등록">
+		</form>
 <%
 	int size = reviewList.size();
 	String contentment = "☆☆☆☆☆";
@@ -159,6 +179,5 @@ img {
     </div>
   </div>
 </div>
-
 </body>
 </html>

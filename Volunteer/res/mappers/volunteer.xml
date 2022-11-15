@@ -16,16 +16,52 @@
 	<select id="getReviewList" parameterType="String" resultType="ReviewVO">
 		select *
 		from review 
-		where reserv_id = (select reserv_id from reservation where vol_id = #{volId})
+		where reserv_id in (select reserv_id from reservation where vol_id = #{volId})
 	</select>
 	
 	<insert id="registerVol" parameterType="VolunteerVO">
-	insert into volunteer
-	values ('V'||LPAD(SEQ_VOLUNTEER.NEXTVAL, 5, '0'), #{volTitle}, #{memId}, #{startDate}, #{endDate},
-	#{startTime}, #{endTime}, #{personnel}, #{total}, #{volCtId}, #{location}, #{status}, #{target},
-	#{qualification}, #{detail}, #{thumbnail})
+		insert into volunteer
+		values ('V'||LPAD(SEQ_VOLUNTEER.NEXTVAL, 5, '0'), #{volTitle}, #{memId}, #{startDate}, #{endDate},
+		#{startTime}, #{endTime}, #{personnel}, #{total}, #{volCtId}, #{location}, #{status}, #{target},
+		#{qualification}, #{detail}, #{thumbnail})
 	</insert>
 	
+	<insert id="reservVol" parameterType="ReservationVO">
+		insert into reservation
+		values ('R'||LPAD(SEQ_RESERVATION.NEXTVAL, 5, '0'), #{volId}, #{memId}, #{reservDate}, #{reservTime},
+		SYSDATE, null, #{rStId})
+	</insert>
 	
+	<select id="getReservDetail" parameterType="String" resultType="ReservationVO">
+		select *
+		from reservation
+		where reserv_id = #{reservId}
+	</select>
+	
+	<select id="getReservList" parameterType="String" resultType="ReservationVO">
+		select *
+		from reservation
+		where mem_id = #{memId}
+	</select>
+	
+	<select id="getDetailForReserv" parameterType="String" resultType="VolunteerVO">
+		select *
+		from volunteer
+		where vol_id = ( select vol_id
+                         from reservation
+                         where reserv_Id = #{reservId})
+	</select>
+	
+	<update id="cancelReserv" parameterType="ReservationVO">
+		update reservation
+		set r_st_id = #{rStId}, cancel_date = SYSDATE
+		where reserv_id = #{reservId}
+	</update>
+	
+	<delete id="deleteVol" parameterType="String">
+	
+		delete from volunteer where vol_Id = #{volId}
+		
+	</delete>
 	
 </mapper>
