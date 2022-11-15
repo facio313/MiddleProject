@@ -117,7 +117,7 @@ img {
 			[봉사 장소]   <%=(vv.getLocation())%> <br>
 			[모집 상태]   <%=(vv.getStatus().getKorName())%> <br>
 			[봉사 대상]   <%=(vv.getTarget())%> <br>
-			[자격 요건]   <%=(vv.getQualification())%>
+			[자격 요건]   <%=(vv.getQualification())%> <br>
 <%
 // 일반 : 예약 / 기관 : 삭제, 수정 / 관리자 : 삭제 수정
 // 기관일 시, 작성자와 같냐
@@ -132,6 +132,7 @@ img {
 %>
 			<a href="volReservation.do?volId=<%= (vv.getVolId()) %>"><button>예약</button></a>
 			<a href="volDelete.do?volId=<%= (vv.getVolId()) %>"><button>삭제</button></a>
+			<a href="volUpdate.do?volId=<%= (vv.getVolId()) %>"><button>수정</button></a>
       	</div> 
       </div>
       

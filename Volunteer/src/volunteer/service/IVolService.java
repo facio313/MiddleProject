@@ -20,5 +20,6 @@ public interface IVolService {
 	public VolunteerVO getDetailForReserv(String reservId);
 	public int cancelReserv(ReservationVO rv);
 	public int deleteVol(String volId);
+	public int updateVol(VolunteerVO vv);
 
 }

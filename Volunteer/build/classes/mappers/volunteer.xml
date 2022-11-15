@@ -64,4 +64,13 @@
 		
 	</delete>
 	
+	<update id="updateVol" parameterType='String'>
+		update Volunteer
+		set vol_title = #{volTitle}, mem_id = #{memId}, start_date = #{startDate}, end_date = #{endDate},
+			start_time = #{startTime}, end_time = #{endTime}, personnel = #{personnel}, total = #{total}, 
+			vol_ct_id = #{volCtId}, location = #{location}, status = #{status}, target = #{target},
+			qualification = #{qualification}, detail = #{detail}, thumbnail = #{thumbnail}
+		where vol_id = #{volId}
+	</update>
+	
 </mapper>

@@ -1,12 +1,7 @@
-<%@page import="volunteer.vo.VolunteerVO"%>
 <%@page import="common.VolStatus"%>
 <%@page import="common.VolCategory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-
-	VolunteerVO vv = (VolunteerVO)request.getAttribute("vv");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,11 +100,11 @@ input {
 					<li><a href="#section2">글 및 첨부파일</a></li>
 				</ul>
 			</nav>
-		<form action="volUpdate.do" method="post" enctype="multipart/form-data">
+		<form action="volRegister.do" method="post" enctype="multipart/form-data">
 			<div class="col-sm-9" style='border: 2px solid black; padding: 10px;'>
 				<div class="col-sm-12" id="section1">
 					<div id="detailLeft">썸네일 
-						<input type="file" name="thumbnail" value="<%=(vv.getThumbnail()) %>">
+						<input type="file" name="thumbnail">
 					</div>
 					<div id="detailRight">
 							<div class="form-group">
@@ -127,21 +122,21 @@ for(VolCategory volCategory : VolCategory.values()){
 %>
 								</select>
 								<label for="input">제목</label>
-								<input class="form-control" type="text" name="volTitle" value="<%= (vv.getVolTitle())%>">
+								<input class="form-control" type="text" name="volTitle">
 								<label for="date">시작 날짜</label>
-								<input type="date" name="startDate" value="<%=(vv.getStartDate())%>">
+								<input type="date" name="startDate">
 								<label for="date">종료 날짜</label>
-								<input type="date" name="endDate" value="<%=(vv.getEndDate())%>"><br>
+								<input type="date" name="endDate"><br>
 								<label for="time">시작 시간</label>
-								<input type="time" name="startTime" value="<%=(vv.getStartTime())%>">
+								<input type="time" name="startTime">
 								<label for="time">종료 시간</label>
-								<input type="time" name="endTime" value="<%=(vv.getEndTime())%>"><br>
+								<input type="time" name="endTime"><br>
 								<label for="input">최대 인원</label>
-								<input type="number" name="personnel" value="<%=(vv.getPersonnel())%>"><br>
+								<input type="number" name="personnel"><br>
 								<label for="input">현재 인원</label>
-								<input type="number" name="total" value="<%=(vv.getTotal())%>"><br>
+								<input type="number" name="total"><br>
 								<label for="typeLocation">봉사 장소</label>
-								<input type="text" id="typeLocation" name="location" value="<%=(vv.getLocation())%>"><br>
+								<input type="text" id="typeLocation" name="location"><br>
 								<div id="map" style="height: 400px;"></div>
 								<label for="sel2">모집 현황</label>
 								<select class="form-control" id="sel2" name="status">
@@ -156,9 +151,9 @@ for(VolStatus volStatus : VolStatus.values()){
 }
 %>								</select>
 								<label for="input">봉사 대상</label>
-								<input type="text" name="target" value="<%=(vv.getTarget())%>"><br>
+								<input type="text" name="target"><br>
 								<label for="input">자격 요건</label>
-								<input type="text" name="qualification" value="<%=(vv.getQualification())%>"><br>
+								<input type="text" name="qualification"><br>
 							</div>
 					</div>
 				</div>
@@ -167,7 +162,7 @@ for(VolStatus volStatus : VolStatus.values()){
 
 				<div class="col-sm-12" id="section2" style="height: 100vh;">
 					<h1>상세내용</h1>
-					<textarea id="summernote" name="detail"><%=(vv.getDetail())%></textarea>
+					<textarea id="summernote" name="detail"></textarea>
 				</div>
 
                      

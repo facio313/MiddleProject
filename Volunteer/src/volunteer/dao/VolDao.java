@@ -84,4 +84,10 @@ public class VolDao extends QueryDao implements IVolDao {
 		return delete("volunteer.deleteVol", volId);
 	}
 
+	@Override
+	public int updateVol(VolunteerVO vv) {
+		
+		return update("volunteer.updateVol", vv);
+	}
+
 }

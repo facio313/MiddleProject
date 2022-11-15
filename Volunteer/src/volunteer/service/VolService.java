@@ -112,4 +112,12 @@ public class VolService implements IVolService {
 		
 		return cnt;
 	}
+
+	@Override
+	public int updateVol(VolunteerVO vv) {
+		
+		int cnt = dao.updateVol(vv);
+		
+		return cnt;
+	}
 }

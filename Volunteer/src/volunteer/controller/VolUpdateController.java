@@ -1,7 +1,6 @@
 package volunteer.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -16,18 +15,26 @@ import common.VolCategory;
 import common.VolStatus;
 import volunteer.service.IVolService;
 import volunteer.service.VolService;
-import volunteer.vo.ReservationVO;
 import volunteer.vo.VolunteerVO;
 
 @MultipartConfig
-@WebServlet("/volRegister.do")
-public class VolRegisterController extends HttpServlet {
-	
-	@Override
+@WebServlet("/volUpdate.do")
+public class VolUpdateController extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String volId = request.getParameter("volId");
 		
-		request.getRequestDispatcher("/WEB-INF/volRegister.jsp").forward(request, response);
+		IVolService service = VolService.getInstance();
 		
+		VolunteerVO vv = service.getDetail(volId);
+		
+		
+		request.setAttribute("vv", vv);
+		
+		request.getRequestDispatcher("/WEB-INF/volUpdate.jsp").forward(request, response);
+		
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +46,7 @@ public class VolRegisterController extends HttpServlet {
 		
 	
 		// 파라미터 값 가져오기
-//		String volId = request.getParameter("volId"); // 시퀀스 사용하여 자동으로 들어감
+		String volId = request.getParameter("volId");
 		String volTitle = request.getParameter("volTitle");
 		String memId = request.getParameter("memId"); // 바꿔줘야 함
 		String startDate = request.getParameter("startDate");
@@ -62,9 +69,9 @@ public class VolRegisterController extends HttpServlet {
 		
 		fileService.saveImage(request, vv.getThumbnail());
 
-//		vv.setVolId(volId); //시퀀스 사용하여 자동으로 들어감
+		vv.setVolId(volId); //시퀀스 사용하여 자동으로 들어감
 		vv.setVolTitle(volTitle);
-		vv.setMemId("a001"); // 세션에서 아이디값 받아와서 바꿔주기 
+		vv.setMemId(memId); // 세션에서 아이디값 받아와서 바꿔주기 
 		vv.setStartDate(startDate);
 		vv.setEndDate(endDate);
 		vv.setStartTime(startTime);
@@ -79,7 +86,7 @@ public class VolRegisterController extends HttpServlet {
 		vv.setDetail(detail);
 		vv.setThumbnail(fileService.getSavePath());
 		
-		int cnt = service.registerVol(vv);
+		int cnt = service.updateVol(vv);
 		
 		String msg = "";
 		if (cnt > 0) {
@@ -90,7 +97,6 @@ public class VolRegisterController extends HttpServlet {
 		
 		request.getSession().setAttribute("msg", msg);
 		response.sendRedirect(request.getContextPath() + "/volList.do");
-		
 	}
-	
+
 }
