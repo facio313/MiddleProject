@@ -34,8 +34,9 @@
 <fullyQualifiedTypeName name="common.IFileService"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
 <fullyQualifiedTypeName name="volunteer.vo.VolunteerVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="volunteer.vo.ReservationVO"/>
 <fullyQualifiedTypeName name="volunteer.service.VolService"/>
 <fullyQualifiedTypeName name="volunteer.service.IVolService"/>
-<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="volunteer.vo.WishVO"/>
 </qualifiedTypeNameHistroy>

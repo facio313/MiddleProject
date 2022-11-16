@@ -8,8 +8,8 @@ import javax.servlet.http.Part;
 public class FileService implements IFileService{
 	private String path = "D:\\A_TeachingMaterial\\04_MiddelProject\\workspace\\Volunteer\\WebContent\\";
 	//private String path = "";
-	private static final String SAVE_DIR = "images/thumbnail";
-		
+	private static final String SAVE_DIR = "/images/thumbnail";
+	
 	private File file;
 	
 	public FileService() {
@@ -30,7 +30,10 @@ public class FileService implements IFileService{
 	 */
 	@Override
 	public String getSavePath() {
-		return file.getPath();
+		if(file != null) {
+			return file.getPath();
+		}
+		return "/images/default/wallpapaer.jpg";
 	}
 	
 	/**
@@ -54,7 +57,7 @@ public class FileService implements IFileService{
 			boolean isFirstFile = true; // 첫번째 파일여부
 			for (Part part : req.getParts()) {
 				fileName = getFileName(part);
-				if (fileName != null) {
+				if (fileName != null && getFieldName(part)) {
 					if(!fileName.equals("")) {
 					// 파일인 경우..
 					if (isFirstFile) { // 첫번째 파일이 맞다면
@@ -104,6 +107,20 @@ public class FileService implements IFileService{
 
 		// filename이 존재하지 않을 경우...(폼필드)
 		return null;
+	}
+	
+	/**
+	 * name이 thumbnail인지 확인
+	 * @param part
+	 * @return
+	 */
+	private Boolean getFieldName(Part part) {
+		for (String content : part.getHeader("Content-Disposition").split(";")) {
+			if (content.trim().startsWith("name=\"thumbnail\"")) {
+				return true;
+			}
+		}
+		return false;
 	}
 		
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import volunteer.vo.VolunteerVO;
+import volunteer.vo.WishVO;
 import volunteer.vo.ReservationVO;
 import volunteer.vo.ReviewVO;
 
@@ -21,5 +22,12 @@ public interface IVolService {
 	public int cancelReserv(ReservationVO rv);
 	public int deleteVol(String volId);
 	public int updateVol(VolunteerVO vv);
+	public int updateReserv(ReservationVO rv);
+	public int wishVol(WishVO wv);
+	public int unWishVol(WishVO wv);
+	public List<WishVO> getWishList();
+//	public WishVO getWish(WishVO wv);
+
+
 
 }

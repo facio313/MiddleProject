@@ -96,8 +96,11 @@ input {
 		<div class="row">
 			<nav class="col-sm-3" id="myScrollspy">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#section1">프로그램 상세</a></li>
-					<li><a href="#section2">글 및 첨부파일</a></li>
+			        <li><a href="volList.do">봉사 프로그램 목록</a></li>
+			        <hr>
+			        <li class="active"><a href="#section1">프로그램 상세</a></li>
+			        <li><a href="#section2">글 및 첨부파일</a></li>
+			        <li><a href="#section3">후기</a></li>
 				</ul>
 			</nav>
 		<form action="volRegister.do" method="post" enctype="multipart/form-data">

@@ -64,13 +64,35 @@
 		
 	</delete>
 	
-	<update id="updateVol" parameterType='String'>
-		update Volunteer
-		set vol_title = #{volTitle}, mem_id = #{memId}, start_date = #{startDate}, end_date = #{endDate},
-			start_time = #{startTime}, end_time = #{endTime}, personnel = #{personnel}, total = #{total}, 
-			vol_ct_id = #{volCtId}, location = #{location}, status = #{status}, target = #{target},
-			qualification = #{qualification}, detail = #{detail}, thumbnail = #{thumbnail}
+	<update id="updateVol">
+		update volunteer
+		set vol_title = #{volTitle, jdbcType=VARCHAR}, mem_id = #{memId, jdbcType=VARCHAR}, start_date = #{startDate, jdbcType=DATE}, end_date = #{endDate, jdbcType=DATE},
+			start_time = #{startTime, jdbcType=VARCHAR}, end_time = #{endTime, jdbcType=VARCHAR}, personnel = #{personnel, jdbcType=INTEGER}, total = #{total, jdbcType=INTEGER}, 
+			vol_ct_id = #{volCtId, jdbcType=VARCHAR}, location = #{location, jdbcType=VARCHAR}, status = #{status, jdbcType=VARCHAR}, target = #{target, jdbcType=VARCHAR},
+			qualification = #{qualification, jdbcType=VARCHAR}, detail = #{detail, jdbcType=CLOB}, thumbnail = #{thumbnail, jdbcType=VARCHAR}
 		where vol_id = #{volId}
 	</update>
+	
+	<update id="updateReserv" parameterType="String">
+		update reservation
+		set reserv_date = #{reservDate}, reserv_time = #{reservTime}, apply_date = SYSDATE
+		where reserv_id = #{reservId}
+	</update>
+	
+	<insert id="wishVol" parameterType="WishVO">
+		insert into wish
+		values (#{memId}, #{volId})
+	</insert>
+	
+	<delete id="unWishVol" parameterType="WishVO">
+		delete from wish
+		where mem_id = #{memId}
+		and vol_id = #{volId}
+	</delete>
+	
+	<select id="getWishList" resultType="WishVO">
+		select *
+		from wish
+	</select>
 	
 </mapper>

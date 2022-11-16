@@ -15,6 +15,7 @@ import common.VolCategory;
 import common.VolStatus;
 import volunteer.service.IVolService;
 import volunteer.service.VolService;
+import volunteer.vo.ReservationVO;
 import volunteer.vo.VolunteerVO;
 
 @MultipartConfig
@@ -22,7 +23,7 @@ import volunteer.vo.VolunteerVO;
 public class VolUpdateController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String volId = request.getParameter("volId");
 		
 		IVolService service = VolService.getInstance();
@@ -61,7 +62,7 @@ public class VolUpdateController extends HttpServlet {
 		String target = request.getParameter("target");
 		String qualification = request.getParameter("qualification");
 		String detail = request.getParameter("detail");
-//		String thumbnail = request.getParameter("thumbnail");
+		String thumbnail = request.getParameter("thumbnail");
 		
 		// 서비스 객체 생성하기
 		IVolService service = VolService.getInstance();
@@ -96,7 +97,7 @@ public class VolUpdateController extends HttpServlet {
 		}
 		
 		request.getSession().setAttribute("msg", msg);
-		response.sendRedirect(request.getContextPath() + "/volList.do");
+		response.sendRedirect(request.getContextPath() + "/volDetail.do?volId=" + volId);
 	}
 
 }

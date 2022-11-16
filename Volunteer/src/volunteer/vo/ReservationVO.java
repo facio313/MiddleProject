@@ -36,7 +36,7 @@ public class ReservationVO {
 	}
 
 	public String getReservDate() {
-		return reservDate;
+		return reservDate.substring(0,10);
 	}
 
 	public void setReservDate(String reservDate) {

@@ -12,18 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import volunteer.service.IVolService;
 import volunteer.service.VolService;
 import volunteer.vo.VolunteerVO;
+import volunteer.vo.WishVO;
 
 @WebServlet("/volList.do")
 public class VolListController extends HttpServlet {
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String memId = request.getParameter("memId");
+		request.setAttribute("memId", memId);
 		
 		IVolService service = VolService.getInstance();
 		List<VolunteerVO> volList = service.getList();
+		List<WishVO> wishList = service.getWishList();
 		
 		request.setAttribute("volList", volList);
-
-		request.getRequestDispatcher("/volList.jsp").forward(request, response);
+		request.setAttribute("wishList", wishList);
+		
+		request.getRequestDispatcher("volList.jsp").forward(request, response);
 		
 	}
 	

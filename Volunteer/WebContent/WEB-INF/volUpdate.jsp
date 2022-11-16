@@ -101,8 +101,10 @@ input {
 		<div class="row">
 			<nav class="col-sm-3" id="myScrollspy">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#section1">프로그램 상세</a></li>
-					<li><a href="#section2">글 및 첨부파일</a></li>
+			        <li><a href="volList.do">봉사 프로그램 목록</a></li>
+			        <hr>
+			        <li class="active"><a href="#section1">프로그램 상세</a></li>
+			        <li><a href="#section2">글 및 첨부파일</a></li>
 				</ul>
 			</nav>
 		<form action="volUpdate.do" method="post" enctype="multipart/form-data">
@@ -113,6 +115,10 @@ input {
 					</div>
 					<div id="detailRight">
 							<div class="form-group">
+								<label for="input">봉사 ID</label>
+								<input class="form-control" type="text" name="volId" value="<%=(vv.getVolId())%>" readonly>
+								<lavel for="input">회원 ID</lavel>
+								<input class="form-control" type="text" name="memId" value="<%=(vv.getMemId())%>" readonly>
 								<label for="sel1">카테고리</label>
 								<select class="form-control" id="sel1" name="category">
 									<option>종류를 선택하세요</option>
@@ -126,6 +132,7 @@ for(VolCategory volCategory : VolCategory.values()){
 }
 %>
 								</select>
+
 								<label for="input">제목</label>
 								<input class="form-control" type="text" name="volTitle" value="<%= (vv.getVolTitle())%>">
 								<label for="date">시작 날짜</label>

@@ -97,6 +97,8 @@ img {
   <div class="row">
     <nav class="col-sm-3" id="myScrollspy">
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="volList.do">봉사 프로그램 목록</a></li>
+        <hr>
         <li class="active"><a href="#section1">프로그램 상세</a></li>
         <li><a href="#section2">글 및 첨부파일</a></li>
         <li><a href="#section3">후기</a></li>
@@ -147,6 +149,10 @@ img {
       <hr>
       <div id="section3">         
         <h1>후기</h1>
+ <% 
+ // 예약한 내역이 있는 사람 중 예약 상태가 expired면 버튼 보이기
+ 
+ %>
 	        <button style="color: black;" onclick="">후기 작성하기</button>
         <form action="volReviewRegister.do" method="post">
 			<input class="form-control" type="text" name="review">

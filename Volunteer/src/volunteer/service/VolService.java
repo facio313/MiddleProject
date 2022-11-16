@@ -10,6 +10,7 @@ import javax.servlet.http.Part;
 import volunteer.dao.IVolDao;
 import volunteer.dao.VolDao;
 import volunteer.vo.VolunteerVO;
+import volunteer.vo.WishVO;
 import volunteer.vo.ReservationVO;
 import volunteer.vo.ReviewVO;
 
@@ -119,5 +120,35 @@ public class VolService implements IVolService {
 		int cnt = dao.updateVol(vv);
 		
 		return cnt;
+	}
+
+	@Override
+	public int updateReserv(ReservationVO rv) {
+
+		int cnt = dao.updateReserv(rv);
+		
+		return cnt;
+	}
+
+	@Override
+	public int wishVol(WishVO wv) {
+		
+		int cnt = dao.wishVol(wv);
+		
+		return cnt;
+	}
+
+	@Override
+	public int unWishVol(WishVO wv) {
+		
+		int cnt = dao.unWishVol(wv);
+		
+		return cnt;
+	}
+
+	@Override
+	public List<WishVO> getWishList() {
+		
+		return dao.getWishList();
 	}
 }

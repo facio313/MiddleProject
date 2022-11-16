@@ -22,7 +22,11 @@
 
 			// if expired, rejected, canceled면 취소 버튼 안 나오게
 %>
+<form >
 	<div>
+		<input type="hidden" name="reservId" value="<%= (reservList.get(i).getReservId()) %>">
+		<input type="hidden" name="memId" value="<%= (reservList.get(i).getMemId()) %>">
+		
         [예약 번호]    <%= (reservList.get(i).getReservId()) %>
         <a href="volDetail.do?volId=<%= (reservList.get(i).getVolId()) %>">
 		[예약 봉사]   <%=(reservList.get(i).getVolId())%>
@@ -33,8 +37,11 @@
 		[신청 날짜]   <%=(reservList.get(i).getApplyDate()) %>
 		[취소 날짜]   <%=(reservList.get(i).getCancelDate()) %>
 		[예약 상태]   <%=(reservList.get(i).getrStId()) %>
-		<a href="volReservCancel.do?reservId=<%= (reservList.get(i).getReservId())%>">취소a</a>
+		
+		<button type="submit" formaction="volReservUpdate.do?reservId=<%=(reservList.get(i).getReservId())%>" formmethod="get">수정</button>
+		<button type="submit" formaction="volReservCancel.do?reservId=<%=(reservList.get(i).getReservId())%>" formmethod="get">취소</button>
 	</div>
+</form>
 <%
 		}
 	} else {

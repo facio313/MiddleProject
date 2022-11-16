@@ -1,3 +1,4 @@
+<%@page import="volunteer.vo.WishVO"%>
 <%@page import="common.VolStatus"%>
 <%@page import="common.VolCategory"%>
 <%@page import="java.util.List"%>
@@ -6,6 +7,8 @@
 	pageEncoding="UTF-8"%>
 <%
 	List<VolunteerVO> volList = (List<VolunteerVO>) request.getAttribute("volList");
+	List<WishVO> wishList = (List<WishVO>)request.getAttribute("wishList");
+	String memId = (String)request.getAttribute("memId");
 
 String msg = session.getAttribute("msg") == null ? "" : (String) session.getAttribute("msg");
 session.removeAttribute("msg");
@@ -54,7 +57,7 @@ div {
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 	<div class="col-sm-12 text-center">
-		<h1>봉사 프로그램 목록</h1>
+		<a href="volList.do"><h1>봉사 프로그램 목록</h1></a>
 
 		<!-- 필터 시작 -->
 		<div class="container">
@@ -114,6 +117,9 @@ div {
 		<div class="container">
 <%
 	int size = volList.size();
+	int wishSize = wishList.size();
+	int k = 0;
+
 	if (size > 0) {
 		for (int i = 0; i < size; i++) {
 
@@ -134,7 +140,34 @@ div {
 						[봉사 대상]   <%=(volList.get(i).getTarget())%> <br>
 						[자격 요건]   <%=(volList.get(i).getQualification())%><br>
 						</a>
-						<i class="bi-heart" style="font-size:3rem; color: red; cursor: pointer;"></i>
+						<form action="volWish.do" method="post">
+							<button type="submit">
+<% 
+							for(int j = 0; j < wishSize; j++) {
+								if(volList.get(i).getVolId().equals(wishList.get(j).getVolId()) && memId.equals(wishList.get(j).getMemId())) {
+									k = 1;
+									break;
+								} else {
+									k = 0;
+									continue;
+								}
+							}
+							if(k == 1) {
+%>
+								<i class="bi-heart-fill" style="font-size:3rem; color: red; cursor: pointer;">
+									<input id="isWished" name="isWished" value="y" type="hidden">
+<%
+							} else {
+%>
+								<i class="bi-heart" style="font-size:3rem; color: red; cursor: pointer;">
+									<input id="isWished" name="isWished" value="n" type="hidden">
+<%								
+							}
+%>
+								<input id="volId" name="volId" value="<%=(volList.get(i).getVolId())%>" type="hidden">
+							</i>
+						</button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -154,17 +187,45 @@ div {
 
     <script>
 
+// 하트
+      
         var i = 0;
         $('i').on('click',function(){
-            if(i==0){
-                $(this).attr('class','bi-heart-fill');
-                i++;
-            }else if(i==1){
-                $(this).attr('class','bi-heart');
-                i--;
-            }
-
+			$.ajax({
+                type: 'post',
+				url: 'volUpdate.do',
+                data: {
+                 	$('#isWished'),
+                 	$('#volId')
+                },
+                aysnc: true,
+                success: 
+                	 if(i==0){
+				     	$(this).attr('class','bi-heart-fill');
+				        $('#isWished').attr('value', 'y');
+				        i++;
+		             } else if(i==1){
+				        $(this).attr('class','bi-heart');
+				        $('#isWished').attr('value', 'n');
+				        i--;
+		             },
+                 error: function(chr){
+                     alert("상태 : " + xhr.status)
+                 };
+       		})
         });
+        
+        function heart(){
+	        $.ajax({
+	        	type: 'get',
+	        	url: 'volUpdate.do',
+	        	dataType: "text",
+	        	async: true
+	        	success:
+	        		alert(data);
+	        });
+        }
+        
         
        	var active = 'list-group-item active';
        	var inactive = 'list-group-item';
@@ -175,7 +236,6 @@ div {
 // 			if(event.target)
 // 		    console.log("무엇을 클릭했을 까요? ", event.target.nodeName);
 // 		})
-		
 		
         $('.locationFilter a:nth-of-type(' + 1 + ')').on('click', function(){
     		$('.locationFilter a').attr('class', inactive);

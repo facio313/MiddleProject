@@ -4,6 +4,7 @@ import java.util.List;
 
 import common.QueryDao;
 import volunteer.vo.VolunteerVO;
+import volunteer.vo.WishVO;
 import volunteer.vo.ReservationVO;
 import volunteer.vo.ReviewVO;
 
@@ -88,6 +89,30 @@ public class VolDao extends QueryDao implements IVolDao {
 	public int updateVol(VolunteerVO vv) {
 		
 		return update("volunteer.updateVol", vv);
+	}
+
+	@Override
+	public int updateReserv(ReservationVO rv) {
+		
+		return update("volunteer.updateReserv", rv);
+	}
+
+	@Override
+	public int wishVol(WishVO wv) {
+		
+		return insert("volunteer.wishVol", wv);
+	}
+
+	@Override
+	public int unWishVol(WishVO wv) {
+		
+		return delete("volunteer.unWishVol", wv);
+	}
+
+	@Override
+	public List<WishVO> getWishList() {
+		
+		return selectList("volunteer.getWishList", null);
 	}
 
 }
