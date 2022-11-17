@@ -93,5 +93,4 @@ public class MemberVO {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-	
 }

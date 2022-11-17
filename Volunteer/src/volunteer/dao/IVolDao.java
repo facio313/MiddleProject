@@ -1,6 +1,7 @@
 package volunteer.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import volunteer.vo.VolunteerVO;
 import volunteer.vo.WishVO;
@@ -12,6 +13,9 @@ public interface IVolDao {
 	public List<VolunteerVO> getList();
 	public VolunteerVO getDetail(String volId);
 	public List<ReviewVO> getReviewList(String volId);
+	public int getReview(Map reviewMap);
+	public int countMyReview(Map reviewMap);
+	public int registerReview(ReviewVO reviewVo);
 	public int registerVol(VolunteerVO vv);
 	public int reservVol(ReservationVO rv);
 	public ReservationVO getReservDetail(String reservId);
@@ -24,6 +28,5 @@ public interface IVolDao {
 	public int wishVol(WishVO wv);
 	public int unWishVol(WishVO wv);
 	public List<WishVO> getWishList();
-//	public WishVO getWish(WishVO wv);
 
 }

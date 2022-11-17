@@ -15,7 +15,6 @@
 <fullyQualifiedTypeName name="review.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="volunteer.dao.IVolDao"/>
 <fullyQualifiedTypeName name="volunteer.dao.VolDao"/>
-<fullyQualifiedTypeName name="volunteer.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="common.VolStatus"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="common.VolCategory"/>
@@ -39,4 +38,9 @@
 <fullyQualifiedTypeName name="volunteer.service.VolService"/>
 <fullyQualifiedTypeName name="volunteer.service.IVolService"/>
 <fullyQualifiedTypeName name="volunteer.vo.WishVO"/>
+<fullyQualifiedTypeName name="volunteer.vo.ReviewVO"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="member.vo.MemberVO"/>
 </qualifiedTypeNameHistroy>

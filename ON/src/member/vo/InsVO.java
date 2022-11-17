@@ -32,5 +32,10 @@ public class InsVO {
 	public void setAtchCourse(String atchCourse) {
 		this.atchCourse = atchCourse;
 	}
+	@Override
+	public String toString() {
+		return "InsVO [memId=" + memId + ", instName=" + instName + ", instApprove=" + instApprove + ", atchCourse="
+				+ atchCourse + "]";
+	}
 	
 }

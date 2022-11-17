@@ -20,8 +20,7 @@ public class VolListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String memId = request.getParameter("memId");
-		request.setAttribute("memId", memId);
+		String memId = request.getParameter("memId"); // session
 		
 		IVolService service = VolService.getInstance();
 		List<VolunteerVO> volList = service.getList();
@@ -29,8 +28,9 @@ public class VolListController extends HttpServlet {
 		
 		request.setAttribute("volList", volList);
 		request.setAttribute("wishList", wishList);
+		request.setAttribute("memId", memId); // session
 		
-		request.getRequestDispatcher("volList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/volunteer/volList.jsp").forward(request, response); // session???
 		
 	}
 	

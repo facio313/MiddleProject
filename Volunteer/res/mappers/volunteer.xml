@@ -19,6 +19,28 @@
 		where reserv_id in (select reserv_id from reservation where vol_id = #{volId})
 	</select>
 	
+	<select id="getReview" parameterType="hashMap" resultType="int">
+		select count(*)
+		from review
+		where reserv_id = ( select distinct reserv_id
+                            from reservation
+                            where vol_id = #{volId}
+                            and mem_id = #{memId}
+                            and r_st_id = 'EXPIRED')
+	</select>
+	
+<!-- 	<select id="countMyReview" parameterType="hashMap" resultType="int"> -->
+<!-- 		select count(*) -->
+<!-- 		from review -->
+<!-- 		where vol_id = #{volId} -->
+<!-- 		and mem_id = #{memId} -->
+<!-- 	</select> -->
+	
+	<insert id="registerReview" parameterType="ReviewVO">
+		insert into review
+		values (#{reservId}, #{start}, #{content})
+	</insert>
+	
 	<insert id="registerVol" parameterType="VolunteerVO">
 		insert into volunteer
 		values ('V'||LPAD(SEQ_VOLUNTEER.NEXTVAL, 5, '0'), #{volTitle}, #{memId}, #{startDate}, #{endDate},

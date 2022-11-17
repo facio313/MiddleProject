@@ -32,7 +32,10 @@ public class FileService implements IFileService{
 	 */
 	@Override
 	public String getSavePath() {
-		return file.getPath();
+		if(file != null) {
+			return file.getPath();
+		}
+		return "/images/default/wallpapaer.jpg";
 	}
 	
 	/**

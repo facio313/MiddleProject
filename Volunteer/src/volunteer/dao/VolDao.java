@@ -1,6 +1,7 @@
 package volunteer.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import common.QueryDao;
 import volunteer.vo.VolunteerVO;
@@ -37,6 +38,24 @@ public class VolDao extends QueryDao implements IVolDao {
 	public List<ReviewVO> getReviewList(String volId) {
 
 		return selectList("volunteer.getReviewList", volId);
+	}
+	
+	@Override
+	public int getReview(Map reviewMap) {
+		
+		return selectOne("volunteer.getReview", reviewMap);
+	}
+	
+	@Override
+	public int countMyReview(Map reviewMap) {
+		
+		return selectOne("volunteer.countMyReview", reviewMap);
+	}
+	
+	@Override
+	public int registerReview(ReviewVO reviewVo) {
+		
+		return insert("volunteer.registerReview", reviewVo);
 	}
 
 	@Override
