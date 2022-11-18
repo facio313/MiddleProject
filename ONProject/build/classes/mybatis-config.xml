@@ -23,6 +23,7 @@
 		<typeAlias type="member.vo.MemberVO" alias="MemberVO"/>
 		<typeAlias type="notice.vo.NoticeVO" alias="NoticeVO" />
 		<typeAlias type="notice.vo.AtchFileVO" alias="AtchFileVO" />
+		<typeAlias type="qna.vo.QnaVO" alias="QnaVO" />
 		<typeAlias type="member.vo.InsVO" alias="InsVO"/>
 		<typeAlias type="funding.vo.FundingVO" alias="FundingVO"/>
 		<typeAlias type="donate.vo.DonateVO" alias="DonateVO"/>
@@ -57,6 +58,7 @@
 		<mapper resource="mappers/volunteer.xml" />
 		<mapper resource="mappers/userClass.xml" />
 		<mapper resource="mappers/notice.xml"/>
+		<mapper resource="mappers/qna.xml"/>
 	</mappers>
 		
 </configuration>

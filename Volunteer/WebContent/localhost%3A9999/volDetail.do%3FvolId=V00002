@@ -1,0 +1,236 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>봉사 상세 정보</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/funding.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
+ 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+  	<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+</head>
+<style>
+.star {
+  position: relative;
+  font-size: 2rem;
+  color: #ddd;
+}
+
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute; 
+  left: 0;
+  color: red;
+  overflow: hidden;
+  pointer-events: none;
+  z-index:9999;
+}
+</style>
+<script type="text/javascript">
+	function drag2(){
+		var no = (document.querySelector("#range").value)*16;
+		var css = $('#real').css('width', no);
+	}
+</script>
+<body>
+	
+
+
+
+
+<!-- header -->
+<header>
+	<p>로그인 된 화면</p>
+	<div class="hd_wrap">
+		<a href="#none">
+		<h1 class="logo">
+			<img src="http://kalch413.dothome.co.kr/images/on_logo.png" alt="로고">
+		</h1>
+		</a>
+		<nav class="gnb">
+			<ul class="gnbmenu">
+				<li>소개</li>
+				<li>봉사</li>
+				<li>후원</li>
+				<li>재능기부</li>
+				<li>커뮤니티</li>
+				<li>마이페이지</li>
+				<li><a href="/member/logout.do" class="loginbt">로그아웃</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- //header -->
+<!-- inside -->
+<div class="menu_wrap">
+	<ul>
+		<li><a href="/funding/List.do">온프로젝트 소개</a></li>
+		<li><a href="/volList.do">봉사 프로그램</a><a href="">봉사프로그램 후기</a></li>
+		<li><a href="/funding/List.do">후원 목록</a> </li>
+		<li><a href="/UsrClsList.do">재능기부 클래스</a></li>
+		<li><a href="/ListNoticeController.do">공지사항</a> <a href="/ListQnaController.do">문의사항</a></li>
+		<li><a href="/mypageMain.do?b001">마이페이지</a></li>
+	</ul>
+</div>
+<!-- inside -->
+    <div class="container">
+        <h1 class="f_title">봉사 프로그램 상세 정보
+			<p>VOLUNTEER</p>
+		</h1>
+        <div class="row">
+		     
+		     	 <table class="col-sm-6 fdetail_tb thum">
+					<tr>
+						<td>
+							<img src="http://localhost:9999/images\default\default.jpg" class="thumb_img_normal" alt="">
+						</td>
+					</tr>
+				 </table>
+        		 <table class="col-sm-6 fdetail_tb">
+        		 	<tr>
+        		 		 <td><h2 class="f_title2">봉사명 : 해리를 처리해주세요!d 수정</h2></td>
+        		 	<tr>
+					<tr>
+						<td><p style="color:#ccc">기관 아이디 : a001</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;모집 기간 : 2022-11-07 ~ 2022-11-09</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;모집 시간 : 09:00 ~ 18:00</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;신청 인원 : 2 / 21</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;봉사 장소 : 호그와</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-play"></span>&nbsp;&nbsp;모집 상태 : 모집 중</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-transfer"></span>&nbsp;&nbsp;봉사 대상 : 해리포</p></td>
+					</tr>
+					<tr>
+						<td><p><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;자격 요건 : 순혈</p></td>
+					</tr>
+					<tr>
+						<td><p>
+							<div><br><br></div>
+							<div id="button" style="text-align: right;">
+
+							<a href="volReservation.do?volId=V00002" class="btn btn-primary btn-lg">예약</a>
+							<a href="volDelete.do?volId=V00002" class="btn btn-danger btn-lg">삭제</a>
+							<a href="volUpdate.do?volId=V00002" class="btn btn-warning btn-lg">수정</a>
+							</div>
+							<div><br><br></div>
+						</p></td>
+					</tr>
+				 </table>
+				 <div id="detail" class="col-sm-12 editorview">
+					<span style="background-color: rgb(0, 0, 0);">A브라카ddd다브라 할</span> 줄 아는 사람만ee
+		         </div>
+		         
+		         <div id="review" class="col-sm-12">
+		            <h2 class="f_title2">후기</h2>
+ 
+	        <button style="color: black;" onclick="reviewRegister()">후기 작성하기</button>
+	    <div id="reviewDiv" style="display: none;">
+	        <form action="volRegisterRewview.do" method="post">
+	        <div>
+				<span class="star">
+				  ★★★★★
+				  <span id="real">★★★★★</span>
+				  <input id="range" type="range" oninput="drag()" value="2" step="2" min="2" max="10">
+				</span>
+			</div>
+				<input id="star" type="text" name="star" value="" hidden>
+	        	<input type="text" name="volId" value="V00002" hidden>
+	        	<input type="text" name="reservId" value="" hidden>
+
+				내용<input class="form-control" type="text" name="content">
+				<input type="submit" value="등록">
+			</form>
+		</div>
+
+        <div>
+
+	        <h2>★★★★★</h2>
+	        2022-11-11 <br>
+	        해리를 놀리는 건 항상 최고에요!!
+        </div>
+
+        <div>
+
+	        <h2>★★★★★</h2>
+	        2022-11-13 <br>
+	        해리는 정말 반응이 찰져요~
+        </div>
+
+		         </div>
+		         
+		         <div id="list"style="text-align: left;">
+			      <a href="/volList.do" class="btn btn-success">목록가기</a>
+		         </div>
+        		
+        </div><!-- row End -->
+    </div><!-- container End -->
+    
+</body>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script>
+$(document).ready(function(){
+	$('.menu_wrap').hide();
+	$('.gnbmenu').mouseover(function(){
+		$('.menu_wrap').slideDown();
+	});
+	$('.menu_wrap').mouseout(function(){
+		$('.menu_wrap').hide();
+	});
+});
+
+//펀딩 내역 에디터
+$(document).ready(function() {
+	$('#summernote').summernote();
+});
+
+$('input[name=thumbnail]').on('click', function(){
+	$('input[name=isChange]').val("click");
+});
+
+function reviewRegister(){
+	if($('#reviewDiv').css('display') == 'none'){
+		$('#reviewDiv').show();
+	} else {
+		$('#reviewDiv').hide();
+	}
+}
+function drag(){
+	var no = (document.querySelector("#range").value)*10;
+	var css = $('#real').css('width', no);
+	$('#star').val(no/20);
+	var star = $('#star').val();
+	console.log(no);
+	console.log(star);
+}
+</script>
+</html>

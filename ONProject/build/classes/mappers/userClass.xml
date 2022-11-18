@@ -10,7 +10,7 @@
 		FROM (
 			SELECT * FROM CLASS 
 			WHERE CLASS_DELETE = 'N' 
-			AND   APPROVAL='Y'
+<!-- 			AND   APPROVAL='Y' -->
 			<if test = "category != null">
 			AND   CLS_CT_ID = #{category}
 			</if>
@@ -32,7 +32,7 @@
 
 	SELECT COUNT(*) FROM CLASS 
 	WHERE CLASS_DELETE = 'N' 
-	AND   APPROVAL='Y'
+<!-- 	AND   APPROVAL='Y' -->
 
 </select>
 

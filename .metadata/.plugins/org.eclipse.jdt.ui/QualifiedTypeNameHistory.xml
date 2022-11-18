@@ -33,14 +33,18 @@
 <fullyQualifiedTypeName name="common.IFileService"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
 <fullyQualifiedTypeName name="volunteer.vo.VolunteerVO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="volunteer.vo.ReservationVO"/>
-<fullyQualifiedTypeName name="volunteer.service.VolService"/>
-<fullyQualifiedTypeName name="volunteer.service.IVolService"/>
 <fullyQualifiedTypeName name="volunteer.vo.WishVO"/>
 <fullyQualifiedTypeName name="volunteer.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="member.vo.MemberVO"/>
+<fullyQualifiedTypeName name="sun.print.resources.serviceui_pt_BR"/>
+<fullyQualifiedTypeName name="volunteer.service.VolService"/>
+<fullyQualifiedTypeName name="volunteer.service.IVolService"/>
+<fullyQualifiedTypeName name="volunteer.vo.ReservationVO"/>
+<fullyQualifiedTypeName name="donate.vo.DonateVO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="mypage.service.IMypageService"/>
+<fullyQualifiedTypeName name="mypage.service.MypageServiceImpl"/>
 </qualifiedTypeNameHistroy>
