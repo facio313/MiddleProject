@@ -30,7 +30,7 @@
 <style>
 .star {
   position: relative;
-  font-size: 4rem;
+  font-size: 2rem;
   color: #ddd;
 }
 
@@ -79,9 +79,7 @@
         		 		 <td><h2 class="f_title2">봉사명 : <%=(vv.getVolTitle())%></h2></td>
         		 	<tr>
 					<tr>
-						<td>
-							<p style="color:#ccc">봉사 아이디 : <%=(vv.getVolId())%> <br> 기관 아이디 : <%=(vv.getMemId())%></p>
-						</td>
+						<td><p style="color:#ccc">기관 아이디 : <%=(vv.getMemId())%></p></td>
 					</tr>
 					<tr>
 						<td><p><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;모집 기간 : <%=(vv.getStartDate())%> ~ <%=(vv.getEndDate())%></p></td>
@@ -132,6 +130,8 @@ if (vv.getMemId().equals(memId) || memId.equals("admin")){
 		         <div id="review" class="col-sm-12">
 		            <h2 class="f_title2">후기</h2>
  <% 
+//session
+// 예약한 내역이 있는 사람 중 예약 상태가 expired면 버튼 보이기
  if(canReview){ // canReview = true -> reservId != null && existNum == 0
 %>
 	        <button style="color: black;" onclick="reviewRegister()">후기 작성하기</button>
@@ -141,7 +141,7 @@ if (vv.getMemId().equals(memId) || memId.equals("admin")){
 				<span class="star">
 				  ★★★★★
 				  <span id="real">★★★★★</span>
-				  <input id="range" type="range" oninput="drag()" value="4" step="4" min="4" max="20" style="top: 10px">
+				  <input id="range" type="range" oninput="drag()" value="2" step="2" min="2" max="10" style="top: 10px">
 				</span>
 			</div>
 				<input type="text" name="reservId" value="<%=reservId%>" hidden>
@@ -222,9 +222,7 @@ function reviewRegister(){
 function drag(){
 	var no = (document.querySelector("#range").value)*10;
 	var css = $('#real').css('width', no);
-	$('#star').val(no/40);
-	console.log($('#star').val());
-	console.log($('#star').val(no/40));
+	$('#star').val(no/20);
 }
 </script>
 </html>

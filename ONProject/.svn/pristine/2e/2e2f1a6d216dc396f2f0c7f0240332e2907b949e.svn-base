@@ -208,7 +208,6 @@ i {background:tranparent;}
 						<!-- session -->
 				        <a id="v_content" href="volDetail.do?volId=<%=volList.get(i).getVolId()%>" class="volList-group-item media-heading" >
 					        <h3 class="v_title">[<%=(volList.get(i).getVolCtId().getKorName())%>]<%=(volList.get(i).getVolTitle())%></h3>
-  							<p style="color:#ccc">봉사 아이디 : <%=(volList.get(i).getVolId())%> <br> 기관 아이디 : <%=(volList.get(i).getMemId())%></p>
 							<p><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;모집 기간 : <%=(volList.get(i).getStartDate())%> ~ <%=(volList.get(i).getEndDate())%> </p>
 							<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;모집 시간 : <%=(volList.get(i).getStartTime())%> ~ <%=(volList.get(i).getEndTime())%></p>
 							<p><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;신청 인원 : <%=(volList.get(i).getTotal())%> / <%=(volList.get(i).getPersonnel())%></p> 

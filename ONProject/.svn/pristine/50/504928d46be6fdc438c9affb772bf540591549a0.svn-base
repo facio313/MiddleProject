@@ -92,10 +92,10 @@ if(volList.get(i).getDeleted().equals("N")){
 	<%
 } else if(volList.get(i).getDeleted().equals("Y")){
 	%>
-    					<h1>[<%=(volList.get(i).getVolCtId().getKorName())%>]<%=(volList.get(i).getVolTitle())%></h1><br>
+    					<h1>[<%=(volList.get(i).getVolCtId().getKorName())%>]<%=(volList.get(i).getVolTitle())%></h1> 해당 글이 삭제되었습니다.
 <%
 }
-%>						[봉사 코드]   <%=(volList.get(i).getVolId())%> <br>
+%>						
 						[모집 기간]   <%=(volList.get(i).getStartDate())%> ~ <%=(volList.get(i).getEndDate())%> <br>
 						[모집 시간]   <%=(volList.get(i).getStartTime())%> ~ <%=(volList.get(i).getEndTime())%> <br>
 						[신청 인원]   <%=(volList.get(i).getTotal())%> / <%=(volList.get(i).getPersonnel())%> <br> 
@@ -103,7 +103,6 @@ if(volList.get(i).getDeleted().equals("N")){
 						[모집 상태]   <%=(volList.get(i).getStatus().getKorName())%> <br>
 						[봉사 대상]   <%=(volList.get(i).getTarget())%> <br>
 						[자격 요건]   <%=(volList.get(i).getQualification())%><br>
-						[삭제 여부]]   <%=(volList.get(i).getDeleted())%><br>
 						</a>
 					</div>
 				</div>

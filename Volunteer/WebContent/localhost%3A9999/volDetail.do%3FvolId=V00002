@@ -22,7 +22,7 @@
 <style>
 .star {
   position: relative;
-  font-size: 2rem;
+  font-size: 4rem;
   color: #ddd;
 }
 
@@ -160,7 +160,7 @@
 				<span class="star">
 				  ★★★★★
 				  <span id="real">★★★★★</span>
-				  <input id="range" type="range" oninput="drag()" value="2" step="2" min="2" max="10">
+				  <input id="range" type="range" oninput="drag()" value="4" step="4" min="4" max="20">
 				</span>
 			</div>
 				<input id="star" type="text" name="star" value="" hidden>
@@ -227,7 +227,7 @@ function reviewRegister(){
 function drag(){
 	var no = (document.querySelector("#range").value)*10;
 	var css = $('#real').css('width', no);
-	$('#star').val(no/20);
+	$('#star').val(no/40);
 	var star = $('#star').val();
 	console.log(no);
 	console.log(star);
