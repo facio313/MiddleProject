@@ -30,6 +30,7 @@
 		      B.* 
 		      FROM (
 		               SELECT * FROM INQUIRY
+		                WHERE mem_id = #{memId}
 		               ORDER BY INQUIRY_ID DESC) B
 <![CDATA[		               
 		      WHERE ROWNUM <= #{end}) A

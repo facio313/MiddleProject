@@ -28,10 +28,13 @@
 	
 </select>
 
-<select id="countList" resultType="int">
+<select id="countList" parameterType="String" resultType="int">
 
 	SELECT COUNT(*) FROM CLASS 
 	WHERE CLASS_DELETE = 'N' 
+	<if test="value != null">
+	and cls_ct_id = #{value}
+	</if>
 <!-- 	AND   APPROVAL='Y' -->
 
 </select>
@@ -137,5 +140,13 @@
 	)
 
 </insert>
+
+<select id="selectMyClassAll" resultType="UsrClsVO">
+	
+	SELECT * 
+	FROM CLASS
+	WHERE MEM_ID = #{memId}
+
+</select>
 
 </mapper>

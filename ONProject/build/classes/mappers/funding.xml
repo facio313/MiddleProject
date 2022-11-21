@@ -70,7 +70,7 @@
 			FUNDING_DETAIL,
 			FUNDING_THUMBNAIL
 		) values (
-			#{fundingId},
+			'FUD' || LPAD( SEQ_FUNDING.nextval, 5, '0'),
 			#{memId},
 			#{fundingTitle},
 			#{targetAmount},
@@ -119,10 +119,10 @@
 	<!-- 기관회원 -->
 	<!-- 기관을 조회해야함 -->
 	<select id="getMemberGb" resultType="String">
-		SELECT DECODE(A.ADMIN, 'Y', '99', DECODE( B.MEM_ID, NULL, '1', '2'))
-		  FROM MEMBER A, INSTITUTION B
-		 WHERE A.MEM_ID = B.MEM_ID(+)
-		   AND A.MEM_ID = #{memId} 
+		SELECT DECODE(A.ADMIN, 'Y', '99', DECODE( B.MEM_ID, NULL, '1', '2')) AS memGb
+        FROM MEMBER A
+        LEFT OUTER JOIN INSTITUTION B ON A.MEM_ID = B.MEM_ID 
+        WHERE A.MEM_ID = #{memId}
 	</select>
 	
 	<!-- 펀딩 글 수정 -->
@@ -135,8 +135,7 @@
 		       funding_account=#{fundingAccount},
 		       funding_account_holder=#{fundingAccountHolder},
 		       funding_bank_name=#{fundingBankName},
-		       funding_detail=#{fundingDetail},
-		       funding_thumbnail=#{fundingThumbnail}
+		       funding_detail=#{fundingDetail}
 		 WHERE FUNDING_ID = #{fundingId}
 		   AND MEM_ID = #{memId}
 	</update>
@@ -144,12 +143,11 @@
 	<!-- 펀딩 현재 금액 업데이트 -->
 	<update id="updateRecentAmount" parameterType="String">
 		UPDATE funding
-		SET recent_amount = (SELECT sum(donate_amount) 
+		SET recent_amount = nvl((SELECT sum(donate_amount) 
 							   FROM donate
 		                      WHERE funding_id = #{fundingId}
-		                        AND refund = 'N')
+		                        AND refund = 'N'), 0)
 		WHERE funding_id = #{fundingId}
-	
 	</update>
 
 </mapper>

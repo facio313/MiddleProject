@@ -15,11 +15,8 @@
 <fullyQualifiedTypeName name="review.vo.ReviewVO"/>
 <fullyQualifiedTypeName name="volunteer.dao.IVolDao"/>
 <fullyQualifiedTypeName name="volunteer.dao.VolDao"/>
-<fullyQualifiedTypeName name="common.VolStatus"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="common.VolCategory"/>
 <fullyQualifiedTypeName name="common.thumbnail.vo.ThumbnailVO"/>
-<fullyQualifiedTypeName name="utils.BatisUtil"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
@@ -50,4 +47,9 @@
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
 <fullyQualifiedTypeName name="java.util.Formatter"/>
 <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="utils.BatisUtil"/>
+<fullyQualifiedTypeName name="common.VolStatus"/>
+<fullyQualifiedTypeName name="common.VolCategory"/>
 </qualifiedTypeNameHistroy>
