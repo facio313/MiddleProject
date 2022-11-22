@@ -112,12 +112,7 @@ font-weight:bold;
 
 #v_status {font-family:'GmarketSansMedium', sans-serif;position:absolute;top: 20%;right:7%;font-weight:bold;font-size:20px;color:#444;#fff;position:absolute; top:0;right:0%}
 i {background:tranparent;}
-.pager {
-   	float: left;
-   }
-#pagelist {
-   	display: flex;
-   	justify-content: center;
+.pager {background:#fff;border:0px solid #fff;position:relative;right: -42%;er;
    }
 </style>
 </head>

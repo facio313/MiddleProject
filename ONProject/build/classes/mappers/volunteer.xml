@@ -125,7 +125,7 @@
 	
 	<update id="changeApproveReserv" parameterType="hashMap">
 		update reservation
-		set r_st_id = '${rStId}'
+		set r_st_id = #{rStId}
 		where reserv_id = #{reservId}
 	</update>
 	
